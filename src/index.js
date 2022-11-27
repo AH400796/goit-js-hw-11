@@ -3,6 +3,7 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 import Notiflix from 'notiflix';
 import './css/styles.css';
 import { applicateAPI } from './axios';
+import axios from 'axios';
 
 const { searchForm, imageGallery, guard } = {
   searchForm: document.querySelector('#search-form'),
