@@ -3,7 +3,6 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 import Notiflix from 'notiflix';
 import './css/styles.css';
 // import { applicateAPI } from './axios';
-
 import axios from 'axios';
 const axios = require('axios');
 
@@ -111,7 +110,7 @@ function createMarkup(array) {
 }
 
 function applicateAPI(searchQuery, page, perPage) {
-  return axios.get(
+  return axios(
     `${BASE_URL}?key=${API_KEY}&q=${searchQuery}&image_type=photo&orientation=horizontal&safesearch=true&per_page=${perPage}&page=${page}&`
   );
 }

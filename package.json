@@ -2,7 +2,6 @@
   "name": "parcel-project-template",
   "version": "2.0.0",
   "description": "",
-  "type": "module",
   "homepage": "https://AH400796.github.io/goit-js-hw-11",
   "scripts": {
     "start": "parcel src/*.html",
