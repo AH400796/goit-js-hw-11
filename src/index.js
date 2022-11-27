@@ -2,8 +2,10 @@ import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import Notiflix from 'notiflix';
 import './css/styles.css';
-import { applicateAPI } from './axios';
+// import { applicateAPI } from './axios';
+
 import axios from 'axios';
+const axios = require('axios');
 
 const { searchForm, imageGallery, guard } = {
   searchForm: document.querySelector('#search-form'),
@@ -12,6 +14,8 @@ const { searchForm, imageGallery, guard } = {
 };
 
 const simpleligthbox = new SimpleLightbox('.gallery a', { loop: false });
+const BASE_URL = 'https://pixabay.com/api/';
+const API_KEY = '31602439-4265b9cd4b0120b6890195f01';
 const perPage = 40;
 let quantity = 0;
 let page = 1;
@@ -104,6 +108,12 @@ function createMarkup(array) {
       </div>`
     )
     .join('');
+}
+
+function applicateAPI(searchQuery, page, perPage) {
+  return axios.get(
+    `${BASE_URL}?key=${API_KEY}&q=${searchQuery}&image_type=photo&orientation=horizontal&safesearch=true&per_page=${perPage}&page=${page}&`
+  );
 }
 
 function addMoreImages(array) {
