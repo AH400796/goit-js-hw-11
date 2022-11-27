@@ -72,10 +72,9 @@ function onSubmit(e) {
 }
 
 function applicateAPI(searchQuery, page, perPage) {
-  const asss = axios(
+  return axios(
     `${BASE_URL}?key=${API_KEY}&q=${searchQuery}&image_type=photo&orientation=horizontal&safesearch=true&per_page=${perPage}&page=${page}&`
   );
-  return asss;
 }
 
 function createMarkup(array) {
