@@ -25,7 +25,6 @@ searchForm.addEventListener('submit', onSubmit);
 
 function onSubmit(e) {
   e.preventDefault();
-  quantity = 0;
   imageGallery.innerHTML = '';
   if (page > 1) {
     observer.unobserve(guard);
