@@ -114,7 +114,7 @@ function createMarkup(array) {
 }
 
 function checkScrollPosition() {
-  if (window.scrollY > window.innerHeight - 100) {
+  if (window.scrollY > window.innerHeight - 70) {
     window.removeEventListener('scroll', checkScrollPosition);
     notifyInfo();
   }
