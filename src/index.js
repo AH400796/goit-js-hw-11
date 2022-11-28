@@ -74,7 +74,9 @@ function onSubmit(e) {
 function applicateAPI(searchQuery, page, perPage) {
   return axios(
     `${BASE_URL}?key=${API_KEY}&q=${searchQuery}&image_type=photo&orientation=horizontal&safesearch=true&per_page=${perPage}&page=${page}&`
-  );
+  ).then(response => {
+    return response;
+  });
 }
 
 function createMarkup(array) {
