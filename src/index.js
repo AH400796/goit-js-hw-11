@@ -4,7 +4,7 @@ import Notiflix from 'notiflix';
 import './css/styles.css';
 // import { applicateAPI } from './axios';
 import axios from 'axios';
-const axios = require('axios');
+// const axios = require('axios');
 
 const { searchForm, imageGallery, guard } = {
   searchForm: document.querySelector('#search-form'),
