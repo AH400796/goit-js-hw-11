@@ -45,7 +45,6 @@ function onSubmit(e) {
         applicateAPI(searchQuery, page, perPage)
           .then(response => {
             if (response.data.hits.length < 1) {
-              console.log('<1');
               throw new Error();
             }
             addMoreImages(response.data.hits);
@@ -56,14 +55,13 @@ function onSubmit(e) {
               notifySuccess(response);
             }
             if (page === Math.ceil(response.data.totalHits / perPage)) {
-              notifyInfo();
               observer.unobserve(guard);
+              window.addEventListener('scroll', checkScrollPosition);
             }
             changeFormOpacity();
             page += 1;
           })
           .catch(error => {
-            console.log('ERR');
             notifyFailure();
             observer.unobserve(guard);
           })
@@ -113,6 +111,13 @@ function createMarkup(array) {
       </div>`
     )
     .join('');
+}
+
+function checkScrollPosition() {
+  if (window.scrollY > window.innerHeight - 100) {
+    window.removeEventListener('scroll', checkScrollPosition);
+    notifyInfo();
+  }
 }
 
 function addMoreImages(array) {
