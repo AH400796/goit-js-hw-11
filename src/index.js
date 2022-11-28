@@ -71,12 +71,11 @@ function onSubmit(e) {
   }
 }
 
-function applicateAPI(searchQuery, page, perPage) {
-  return axios(
+async function applicateAPI(searchQuery, page, perPage) {
+  const response = await axios(
     `${BASE_URL}?key=${API_KEY}&q=${searchQuery}&image_type=photo&orientation=horizontal&safesearch=true&per_page=${perPage}&page=${page}&`
-  ).then(response => {
-    return response;
-  });
+  );
+  return response;
 }
 
 function createMarkup(array) {
