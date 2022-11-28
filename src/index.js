@@ -62,6 +62,7 @@ function onSubmit(e) {
             page += 1;
           })
           .catch(error => {
+            console.log('ERR');
             notifyFailure();
             observer.unobserve(guard);
           })
