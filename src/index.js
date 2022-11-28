@@ -45,6 +45,7 @@ function onSubmit(e) {
         applicateAPI(searchQuery, page, perPage)
           .then(response => {
             if (response.data.hits.length < 1) {
+              console.log('<1');
               throw new Error();
             }
             addMoreImages(response.data.hits);
