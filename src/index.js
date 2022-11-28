@@ -13,7 +13,7 @@ const { searchForm, imageGallery, guard } = {
 };
 
 const simpleligthbox = new SimpleLightbox('.gallery a', { loop: false });
-const BASE_URL = 'https://pixabay.com/api';
+const BASE_URL = 'https://pixabay.com/api/';
 const API_KEY = '31602439-4265b9cd4b0120b6890195f01';
 
 const perPage = 40;
